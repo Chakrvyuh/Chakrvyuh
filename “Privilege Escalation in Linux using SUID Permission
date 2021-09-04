@@ -1,0 +1,22 @@
+permissions
+read write execute --rwx rwx rwx 421 421 421  ---user(421) group(421) others(421)
+chmod 777 (All permissions)
+special permission is given to each user it becomes SUID, SGID, and sticky bits. When extra bit “4” is set to user(Owner) it becomes SUID (Set user ID)
+and when bit “2” is set to group it becomes SGID (Set Group ID) and  if other users are allowed to create or delete any file inside a directory then sticky bits “1” is set
+to that directory.
+rwsrwsrwt
+
+to set sicky bit on some file
+
+which cp
+/usr/bin/cp
+chmod u+s /usr/bin/cp
+ls-la /usr/bin/cp
+
+now login through non root user by putty
+and find on which file sticky bit is set
+find / -perm -u=s -type f 2>/dev/null
+we find /usr/bin/cp
+then cp /etc/passwd /tmp
+cd /tmp
+nano passwd ..we found file is not writable
